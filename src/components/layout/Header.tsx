@@ -2,11 +2,22 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import { i18n, type Locale } from "@/i18n-config";
 import Image from "next/image";
 
 export default function Header({ lang }: { lang: Locale }) {
     const pathname = usePathname();
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 40);
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const redirectedPathName = (locale: Locale) => {
         if (!pathname) return "/";
@@ -16,35 +27,98 @@ export default function Header({ lang }: { lang: Locale }) {
     };
 
     return (
-        <nav className="fixed w-full z-50 bg-white border-b border-zinc-200">
-            <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                <Link href={`/${lang}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <Image src="/images/Fabcomlogo.png" alt="Fabcom Logo" width={32} height={32} className="object-contain" priority />
-                    <span className="text-2xl font-bold tracking-tight text-zinc-900">
-                        Fabcom
-                    </span>
-                </Link>
-                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
-                    <Link href={`/${lang}/services`} className="hover:text-primary-600 transition-colors">Services</Link>
-                    <Link href={`/${lang}/about`} className="hover:text-primary-600 transition-colors">About</Link>
-
-                    <div className="flex gap-2 text-xs text-zinc-400 border-l border-zinc-200 pl-6 ml-2">
-                        {i18n.locales.map((locale) => (
-                            <Link
-                                key={locale}
-                                href={redirectedPathName(locale)}
-                                className={`uppercase hover:text-zinc-900 transition-colors ${lang === locale ? 'text-zinc-900 font-bold' : ''}`}
-                            >
-                                {locale}
-                            </Link>
-                        ))}
-                    </div>
-
-                    <Link href={`/${lang}/contact`} className="bg-primary-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-primary-700 transition-colors shadow-sm">
-                        Contact
+        <header
+            className={`fixed z-50 left-0 right-0 transition-all duration-300 ease-in-out ${scrolled
+                ? "top-0 mx-0 px-0"
+                : "top-4 mx-4 md:mx-8 lg:mx-12"
+                }`}
+        >
+            <nav
+                className={`mx-auto transition-all duration-300 ease-in-out ${scrolled
+                    ? "max-w-full bg-white/95 backdrop-blur-sm shadow-sm border-b border-zinc-100 rounded-none"
+                    : "max-w-6xl bg-white rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
+                    }`}
+            >
+                <div
+                    className={`flex items-center justify-between transition-all duration-300 ${scrolled
+                        ? "max-w-7xl mx-auto px-6 lg:px-8 h-16"
+                        : "px-6 lg:px-8 h-16"
+                        }`}
+                >
+                    {/* Logo */}
+                    <Link href={`/${lang}`} className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0">
+                        <Image
+                            src="/images/Fabcomlogofull.png"
+                            alt="Fabcom"
+                            width={240}
+                            height={40}
+                            className="object-contain w-28 md:w-36 h-auto"
+                            priority
+                        />
                     </Link>
+
+                    {/* Navigation */}
+                    <div className="hidden md:flex items-center gap-1">
+                        {/* Nav Links */}
+                        <div className="flex items-center gap-1 text-[13px] font-medium text-zinc-600">
+                            <Link
+                                href={`/${lang}/services`}
+                                className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
+                            >
+                                Services
+                            </Link>
+                            <Link
+                                href={`/${lang}/about`}
+                                className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
+                            >
+                                About
+                            </Link>
+                            <Link
+                                href={`/${lang}/features`}
+                                className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
+                            >
+                                Features
+                            </Link>
+                            <Link
+                                href={`/${lang}/workflow`}
+                                className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
+                            >
+                                Workflow
+                            </Link>
+                        </div>
+
+                        {/* Divider */}
+                        <div className="w-px h-5 bg-zinc-200 mx-2" />
+
+                        {/* Language Switcher */}
+                        <div className="flex items-center gap-0.5 text-xs text-zinc-400">
+                            {i18n.locales.map((locale) => (
+                                <Link
+                                    key={locale}
+                                    href={redirectedPathName(locale)}
+                                    className={`px-2 py-1.5 rounded-md uppercase transition-all ${lang === locale
+                                        ? "text-zinc-900 font-semibold bg-zinc-50"
+                                        : "hover:text-zinc-700 hover:bg-zinc-50"
+                                        }`}
+                                >
+                                    {locale}
+                                </Link>
+                            ))}
+                        </div>
+
+                        {/* Divider */}
+                        <div className="w-px h-5 bg-zinc-200 mx-2" />
+
+                        {/* Contact CTA */}
+                        <Link
+                            href={`/${lang}/contact`}
+                            className="bg-primary-600 text-white text-[13px] px-5 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-sm"
+                        >
+                            Contact
+                        </Link>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
     );
 }

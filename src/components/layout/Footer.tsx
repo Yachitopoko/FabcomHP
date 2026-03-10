@@ -6,9 +6,8 @@ export default function Footer({ lang }: { lang: Locale }) {
     return (
         <footer className="py-12 border-t border-zinc-200 bg-zinc-50 text-zinc-500 text-sm text-center mt-12">
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex items-center gap-2 opacity-80 grayscale">
-                    <Image src="/images/Fabcomlogo.png" alt="Fabcom Logo" width={24} height={24} className="object-contain" />
-                    <span className="text-lg font-bold tracking-tight text-zinc-800">Fabcom</span>
+                <div className="flex items-center opacity-80 grayscale">
+                    <Image src="/images/Fabcomlogofull.png" alt="Fabcom Logo" width={200} height={32} className="object-contain w-28 md:w-32 h-auto" />
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-6 font-medium">
