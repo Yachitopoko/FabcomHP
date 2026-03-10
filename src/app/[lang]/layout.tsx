@@ -37,9 +37,9 @@ export default async function RootLayout({
 
     return (
         <html lang={lang}>
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white selection:bg-primary-500/30`}>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-zinc-800 selection:bg-primary-100 text-base leading-relaxed`}>
                 <Header lang={lang} />
-                <main className="min-h-screen pt-20">
+                <main className="min-h-screen pt-24 font-sans">
                     {children}
                 </main>
                 <Footer lang={lang} />

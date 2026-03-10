@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { i18n, type Locale } from "@/i18n-config";
+import Image from "next/image";
 
 export default function Header({ lang }: { lang: Locale }) {
     const pathname = usePathname();
@@ -15,28 +16,31 @@ export default function Header({ lang }: { lang: Locale }) {
     };
 
     return (
-        <nav className="fixed w-full z-50 glass border-b border-white/5 bg-black/50 backdrop-blur-md">
+        <nav className="fixed w-full z-50 bg-white border-b border-zinc-200">
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                <Link href={`/${lang}`} className="text-2xl font-bold tracking-tighter text-white">
-                    FAB<span className="text-primary-500">COM</span>
+                <Link href={`/${lang}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <Image src="/images/Fabcomlogo.png" alt="Fabcom Logo" width={32} height={32} className="object-contain" priority />
+                    <span className="text-2xl font-bold tracking-tight text-zinc-900">
+                        Fabcom
+                    </span>
                 </Link>
-                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
-                    <Link href={`/${lang}/services`} className="hover:text-white transition-colors">Services</Link>
-                    <Link href={`/${lang}/about`} className="hover:text-white transition-colors">About</Link>
+                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
+                    <Link href={`/${lang}/services`} className="hover:text-primary-600 transition-colors">Services</Link>
+                    <Link href={`/${lang}/about`} className="hover:text-primary-600 transition-colors">About</Link>
 
-                    <div className="flex gap-2 text-xs text-zinc-500 border-l border-white/10 pl-6 ml-2">
+                    <div className="flex gap-2 text-xs text-zinc-400 border-l border-zinc-200 pl-6 ml-2">
                         {i18n.locales.map((locale) => (
                             <Link
                                 key={locale}
                                 href={redirectedPathName(locale)}
-                                className={`uppercase hover:text-white transition-colors ${lang === locale ? 'text-white font-bold' : ''}`}
+                                className={`uppercase hover:text-zinc-900 transition-colors ${lang === locale ? 'text-zinc-900 font-bold' : ''}`}
                             >
                                 {locale}
                             </Link>
                         ))}
                     </div>
 
-                    <Link href={`/${lang}/contact`} className="bg-white text-black px-5 py-2.5 rounded-full font-semibold hover:bg-zinc-200 transition-colors">
+                    <Link href={`/${lang}/contact`} className="bg-primary-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-primary-700 transition-colors shadow-sm">
                         Contact
                     </Link>
                 </div>

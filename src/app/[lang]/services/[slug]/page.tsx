@@ -27,34 +27,34 @@ export default async function ServiceDetailPage({
     return (
         <>
             <section className="py-24 max-w-4xl mx-auto px-6">
-                <Link href={`/${lang}/services`} className="inline-flex items-center text-primary-400 hover:text-primary-300 mb-12 transition-colors">
+                <Link href={`/${lang}/services`} className="inline-flex items-center text-primary-600 hover:text-primary-700 font-bold mb-12 transition-colors">
                     <ArrowLeft className="w-4 h-4 mr-2" /> サービス一覧へ戻る
                 </Link>
 
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h1>
-                <p className="text-xl text-zinc-400 mb-16 leading-relaxed">
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-zinc-900">{service.title}</h1>
+                <p className="text-xl text-zinc-600 mb-16 leading-relaxed">
                     {service.desc}
                 </p>
 
                 <div className="space-y-16">
-                    <div className="glass p-8 md:p-12 rounded-3xl border border-white/5">
-                        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <div className="bg-white p-8 md:p-12 rounded-lg border border-zinc-200 shadow-sm">
+                        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 text-zinc-900">
                             <CheckCircle2 className="text-primary-500" />
                             対応内容
                         </h2>
-                        <ul className="space-y-4 text-zinc-300">
+                        <ul className="space-y-4 text-zinc-700">
                             <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 flex-shrink-0"></span> 戦略立案とプラニング</li>
                             <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 flex-shrink-0"></span> デザインおよび開発</li>
                             <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent mt-2.5 flex-shrink-0"></span> 公開後の運用と改善施策の実行</li>
                         </ul>
                     </div>
 
-                    <div className="glass p-8 md:p-12 rounded-3xl border border-white/5">
-                        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <div className="bg-white p-8 md:p-12 rounded-lg border border-zinc-200 shadow-sm">
+                        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 text-zinc-900">
                             <CheckCircle2 className="text-primary-500" />
                             制作・支援の流れ
                         </h2>
-                        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
+                        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-zinc-200">
                             {[
                                 { step: "01", title: "ヒアリング", desc: "現状の課題と目標をオンラインで詳細にお伺いします。" },
                                 { step: "02", title: "戦略立案", desc: "ヒアリングに基づき、最適なプランとロードマップをご提案。" },
@@ -62,12 +62,12 @@ export default async function ServiceDetailPage({
                                 { step: "04", title: "運用・改善", desc: "データを分析し、PDCAを回しながら成果を最大化します。" }
                             ].map((item, idx) => (
                                 <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group select-none">
-                                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-zinc-900 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-xs font-bold font-mono">
+                                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-primary-100 bg-white text-primary-600 shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-sm font-bold font-mono">
                                         {item.step}
                                     </div>
-                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-2xl border border-white/5 group-hover:bg-white/[0.05] transition-colors">
-                                        <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                                        <p className="text-zinc-400 text-sm">{item.desc}</p>
+                                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-zinc-50 p-6 rounded-lg border border-zinc-200 group-hover:border-primary-200 transition-colors">
+                                        <h3 className="font-bold text-lg mb-2 text-zinc-900">{item.title}</h3>
+                                        <p className="text-zinc-600 text-sm">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
