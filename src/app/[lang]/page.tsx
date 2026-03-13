@@ -9,28 +9,31 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     return (
         <>
             {/* Hero Section */}
-            <section id="hero" className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden bg-gradient-to-br from-white via-primary-50/40 to-white">
+            <section id="hero" className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden bg-primary-900">
+                {/* リッチな濃い青の背景グラデーション（Salesforce風の深み） */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 pointer-events-none"></div>
+
                 <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-100/50 bg-white/80 backdrop-blur-sm text-primary-700 text-sm font-bold mb-8 shadow-sm">
-                        <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white text-sm font-bold mb-8 shadow-sm">
+                        <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></span>
                         地域企業のためのAI・デジタル支援パートナー
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-zinc-900 font-sans leading-[1.2]">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white font-sans leading-[1.2]">
                         地域企業の成長を<br/>
-                        <span className="text-primary-600">Webと集客とAI活用で支える</span>
+                        <span className="text-primary-300">Webと集客とAI活用で支える</span>
                     </h1>
 
-                    <p className="text-base md:text-xl text-zinc-600 mb-12 max-w-3xl leading-relaxed font-sans font-medium">
+                    <p className="text-base md:text-xl text-white/90 mb-12 max-w-3xl leading-relaxed font-sans font-medium">
                         Webサイト制作、デジタルマーケティング、AI導入支援まで。<br className="hidden md:block"/>
                         事業課題に合わせて、成果につながる施策を一緒に設計・実行します。
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                        <Link href={`/${lang}/contact`} className="flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-md font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full sm:w-auto text-lg">
+                        <Link href={`/${lang}/contact`} className="flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 hover:bg-primary-400 text-white rounded-md font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full sm:w-auto text-lg">
                             無料相談する <ArrowRight className="w-5 h-5" />
                         </Link>
-                        <Link href={`/${lang}/services`} className="flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-zinc-200 hover:border-primary-600 hover:bg-zinc-50 text-zinc-700 hover:text-primary-600 rounded-md font-bold transition-all shadow-sm w-full sm:w-auto text-lg">
+                        <Link href={`/${lang}/services`} className="flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-white hover:bg-zinc-100 text-primary-900 rounded-md font-bold transition-all shadow-sm w-full sm:w-auto text-lg">
                             サービスを見る
                         </Link>
                     </div>

@@ -49,19 +49,19 @@ export default function Header({ lang }: { lang: Locale }) {
 
     return (
         <header
-            className={`fixed z-50 left-0 right-0 transition-all duration-300 ease-in-out ${scrolled
-                ? "top-0 mx-0 px-0"
-                : "top-4 mx-4 md:mx-8 lg:mx-12"
+            className={`fixed z-[100] left-0 right-0 transition-all duration-300 ease-in-out ${scrolled
+                ? "top-0 px-0"
+                : "top-4 md:top-6 px-4"
                 }`}
         >
             <nav
                 className={`mx-auto transition-all duration-300 ease-in-out ${scrolled
-                    ? "max-w-full bg-white/95 backdrop-blur-sm shadow-sm border-b border-zinc-100 rounded-none"
-                    : "max-w-6xl bg-white rounded-2xl shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
+                    ? "max-w-full bg-white/95 backdrop-blur-sm shadow-sm border-b border-zinc-100 rounded-none w-full"
+                    : "w-full max-w-6xl bg-white/90 backdrop-blur-md rounded-full shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-white/50"
                     }`}
             >
                 <div
-                    className={`flex items-center justify-between transition-all duration-300 ${scrolled
+                    className={`flex items-center justify-between transition-all duration-300 w-full ${scrolled
                         ? "max-w-7xl mx-auto px-6 lg:px-8 h-16"
                         : "px-6 lg:px-8 h-16"
                         }`}
@@ -86,27 +86,27 @@ export default function Header({ lang }: { lang: Locale }) {
                                 href={`/${lang}/services`}
                                 className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
                             >
-                                Services
+                                サービス
                             </Link>
                             <Link
                                 href={`/${lang}#features`}
                                 onClick={(e) => handleSmoothScroll(e, "features")}
                                 className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
                             >
-                                Features
+                                選ばれる理由
                             </Link>
                             <Link
                                 href={`/${lang}#workflow`}
                                 onClick={(e) => handleSmoothScroll(e, "workflow")}
                                 className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
                             >
-                                Workflow
+                                導入の流れ
                             </Link>
                             <Link
                                 href={`/${lang}/about`}
                                 className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
                             >
-                                About
+                                会社情報
                             </Link>
                         </div>
 
@@ -135,9 +135,9 @@ export default function Header({ lang }: { lang: Locale }) {
                         {/* Contact CTA */}
                         <Link
                             href={`/${lang}/contact`}
-                            className="bg-primary-600 text-white text-[13px] px-5 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-sm"
+                            className="bg-primary-600 text-white text-[13px] px-6 py-2.5 rounded-full font-bold hover:bg-primary-700 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 inline-block"
                         >
-                            Contact
+                            お問い合わせ
                         </Link>
                     </div>
                 </div>
