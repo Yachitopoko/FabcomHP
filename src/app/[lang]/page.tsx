@@ -36,19 +36,41 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                     </h1>
 
                     <p className="text-base md:text-lg text-zinc-600 mb-10 max-w-3xl leading-relaxed font-sans font-medium">
-                        人材不足、集客の悩み、業務の非効率。中小企業が抱えるあらゆる課題を、最新のAIテクノロジーとデジタルマーケティングで解決します。圧倒的なスピードと柔軟性で、あなたのビジネスの成長を強力に後押しする。それがFabcomの使命です。
+                        最新のAIテクノロジーとデジタルマーケティングで、企業が抱える「集客」と「業務効率化」の課題を解決します。技術をただ導入するだけでなく、ビジネスの成長に伴走するパートナーとして、最適な次の一手をご提案します。
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <div className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
                         <Link href={`/${lang}/contact`} className="flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-md font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto text-lg">
-                            無料相談・お問い合わせはこちら <ArrowRight className="w-5 h-5" />
+                            無料相談する <ArrowRight className="w-5 h-5" />
                         </Link>
+                        <a href="#services" className="flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-primary-600 hover:bg-primary-50 text-primary-600 rounded-md font-bold transition-all shadow-sm w-full sm:w-auto text-lg">
+                            サービスを見る
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* Challenges Section */}
+            <section className="py-20 bg-zinc-50 border-t border-zinc-100">
+                <div className="max-w-5xl mx-auto px-6 text-center">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-10 text-zinc-900 font-sans">こんなお悩みはありませんか？</h2>
+                    <div className="flex flex-col md:flex-row gap-6 justify-center">
+                        <div className="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm flex-1 flex items-center justify-center min-h-[100px]">
+                            <p className="text-zinc-700 font-bold leading-relaxed">「Webサイトが古く、<br/>会社の魅力が伝わらない…」</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm flex-1 flex items-center justify-center min-h-[100px]">
+                            <p className="text-zinc-700 font-bold leading-relaxed">「集客や採用に<br/>デジタルを活用しきれていない…」</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm flex-1 flex items-center justify-center min-h-[100px]">
+                            <p className="text-zinc-700 font-bold leading-relaxed">「AIやITツールを導入したいが、<br/>詳しい人材がいない…」</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Features Section */}
-            <section id="features" className="py-24 bg-zinc-50 border-t border-zinc-100">
+            {/* Features (Why Choose Us) Section */}
+            <section id="features" className="py-24 bg-white border-t border-zinc-100">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 font-sans">なぜ、Fabcomが選ばれるのか</h2>
@@ -67,7 +89,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                             <div className="text-center font-bold text-zinc-900 text-lg md:text-xl">
                                 AI <span className="text-primary-400">×</span> 伴走
                             </div>
-                            <div className="text-xs text-zinc-500 mt-1 font-medium">Fabcomのコア</div>
+                            <div className="text-xs text-zinc-500 mt-1 font-medium">Fabcomの強み</div>
                         </div>
 
                         {/* Connecting Lines for Desktop (hidden on mobile) */}
@@ -77,47 +99,53 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                         {/* Cards */}
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-24 w-full z-10 relative mt-8 lg:mt-0">
                             {/* Strength 1 */}
-                            <div className="bg-white p-8 rounded-xl shadow-md border border-zinc-100 relative group hover:border-primary-200 transition-colors lg:-translate-y-16">
-                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">1</div>
-                                <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                            <div className="bg-zinc-50 p-8 rounded-xl shadow-sm border border-zinc-100 relative group lg:-translate-y-16">
+                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+                                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
                                     <Zap className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">【AIフル活用による圧倒的なスピードとコストパフォーマンス】</h3>
+                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">AI活用による<br/>スピードとコスト削減</h3>
                                 <p className="text-zinc-600 text-sm leading-relaxed font-sans">
-                                    最新のAIツールを開発・運用プロセスに組み込むことで、従来は多大な時間と費用がかかっていた施策を、高品質かつスピーディに提供します。限られた予算でも最大の成果を生み出します。
+                                    最新AI技術を制作プロセスに組み込み、限られたご予算でも高品質かつスピーディな提供を実現します。
                                 </p>
                             </div>
 
                             {/* Strength 2 */}
-                            <div className="bg-white p-8 rounded-xl shadow-md border border-zinc-100 relative group hover:border-primary-200 transition-colors lg:translate-y-48">
-                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">2</div>
-                                <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                            <div className="bg-zinc-50 p-8 rounded-xl shadow-sm border border-zinc-100 relative group lg:translate-y-48">
+                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+                                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
                                     <Users className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">【少数精鋭だからできる「完全伴走型」のサポート】</h3>
+                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">少数精鋭の<br/>「完全伴走型」サポート</h3>
                                 <p className="text-zinc-600 text-sm leading-relaxed font-sans">
-                                    営業と制作で担当者が変わる大手代理店とは異なり、代表を含む専門家が直接ヒアリングから実行までを一貫して担当。認識のズレを防ぎ、経営者の想いをダイレクトに形にします。
+                                    専門家が直接ヒアリングから実行までを一貫して担当し、認識のズレを防ぎ想いを形にします。
                                 </p>
                             </div>
 
                             {/* Strength 3 */}
-                            <div className="bg-white p-8 rounded-xl shadow-md border border-zinc-100 relative group hover:border-primary-200 transition-colors lg:-translate-y-16">
-                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">3</div>
-                                <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+                            <div className="bg-zinc-50 p-8 rounded-xl shadow-sm border border-zinc-100 relative group lg:-translate-y-16">
+                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+                                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
                                     <TrendingUp className="w-6 h-6" />
                                 </div>
-                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">【「作るだけ」で終わらない。集客と業務効率化のワンストップ支援】</h3>
+                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">集客と効率化の<br/>ワンストップ支援</h3>
                                 <p className="text-zinc-600 text-sm leading-relaxed font-sans">
-                                    美しいホームページを作ることはゴールではありません。見込み客を集めるWeb集客（新規獲得・リピート促進）から、社内のIT化・DX推進による業務効率化まで、企業の利益を最大化する包括的な支援を行います。
+                                    作るだけで終わらず、Web集客からIT化・DX推進による業務効率化まで包括的に支援します。
                                 </p>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div className="mt-20 text-center">
+                        <Link href={`/${lang}/about`} className="inline-flex items-center text-primary-600 font-bold hover:text-primary-800 transition-colors gap-1">
+                            Fabcomについて見る <ArrowRight className="w-4 h-4" />
+                        </Link>
                     </div>
                 </div>
             </section>
 
             {/* Services Section */}
-            <section id="services" className="py-24 bg-white border-t border-zinc-100">
+            <section id="services" className="py-24 bg-zinc-50 border-t border-zinc-100">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center max-w-2xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 font-sans">提供サービス</h2>
@@ -126,164 +154,106 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
                     <div className="grid md:grid-cols-3 gap-6">
                         {/* Service 1 */}
-                        <div className="group relative h-80 rounded-xl overflow-hidden cursor-default shadow-md bg-zinc-50 border border-zinc-100 transition-all duration-500 hover:shadow-2xl">
-                            {/* Default State */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 transition-opacity duration-500 group-hover:opacity-0 bg-white">
-                                <MonitorSmartphone className="w-16 h-16 text-primary-600 mb-6" />
-                                <h3 className="text-xl font-bold text-zinc-900 font-sans text-center">Webサイト制作・<br/>リニューアル</h3>
-                            </div>
-                            
-                            {/* Hover State */}
-                            <div className="absolute inset-0 bg-primary-600 p-8 flex flex-col items-center justify-center text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                                <MonitorSmartphone className="w-10 h-10 text-white/80 mb-4 shrink-0" />
-                                <h3 className="text-lg font-bold mb-3 text-white font-sans text-center">Webサイト制作・リニューアル</h3>
-                                <div className="w-10 h-px bg-white/30 mb-4 shrink-0"></div>
-                                <p className="text-sm text-primary-50 leading-relaxed font-sans text-center">
-                                    企業の「顔」となり、信用を向上させる高品質なWebサイトを構築。AIを活用した迅速な制作プロセスで、集客に強いサイトを実現します。
-                                </p>
-                            </div>
+                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                            <MonitorSmartphone className="w-12 h-12 text-primary-600 mb-6" />
+                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">Webサイト制作・<br/>リニューアル</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
+                                企業の「顔」となり、信用を向上させる高品質なWebサイトを構築します。
+                            </p>
+                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
+                                詳細を見る <ArrowRight className="w-4 h-4" />
+                            </Link>
                         </div>
 
                         {/* Service 2 */}
-                        <div className="group relative h-80 rounded-xl overflow-hidden cursor-default shadow-md bg-zinc-50 border border-zinc-100 transition-all duration-500 hover:shadow-2xl">
-                            {/* Default State */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 transition-opacity duration-500 group-hover:opacity-0 bg-white">
-                                <TrendingUp className="w-16 h-16 text-primary-600 mb-6" />
-                                <h3 className="text-xl font-bold text-zinc-900 font-sans text-center">デジタル集客・<br/>マーケティング支援</h3>
-                            </div>
-                            
-                            {/* Hover State */}
-                            <div className="absolute inset-0 bg-primary-600 p-8 flex flex-col items-center justify-center text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                                <TrendingUp className="w-10 h-10 text-white/80 mb-4 shrink-0" />
-                                <h3 className="text-lg font-bold mb-3 text-white font-sans text-center">デジタル集客・マーケティング支援</h3>
-                                <div className="w-10 h-px bg-white/30 mb-4 shrink-0"></div>
-                                <p className="text-sm text-primary-50 leading-relaxed font-sans text-center">
-                                    新規顧客の獲得から、既存顧客のファン化（リピート増加）まで。SNS運用、広告運用、リテンション施策など、貴社に最適なマーケティング戦略を立案・実行します。
-                                </p>
-                            </div>
+                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                            <TrendingUp className="w-12 h-12 text-primary-600 mb-6" />
+                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">デジタル集客・<br/>マーケティング支援</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
+                                SNS運用や広告など、貴社に最適なマーケティング戦略を立案・実行します。
+                            </p>
+                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
+                                詳細を見る <ArrowRight className="w-4 h-4" />
+                            </Link>
                         </div>
 
                         {/* Service 3 */}
-                        <div className="group relative h-80 rounded-xl overflow-hidden cursor-default shadow-md bg-zinc-50 border border-zinc-100 transition-all duration-500 hover:shadow-2xl">
-                            {/* Default State */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 transition-opacity duration-500 group-hover:opacity-0 bg-white">
-                                <Cpu className="w-16 h-16 text-primary-600 mb-6" />
-                                <h3 className="text-xl font-bold text-zinc-900 font-sans text-center">AI・DX<br/>導入サポート</h3>
-                            </div>
-                            
-                            {/* Hover State */}
-                            <div className="absolute inset-0 bg-primary-600 p-8 flex flex-col items-center justify-center text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                                <Cpu className="w-10 h-10 text-white/80 mb-4 shrink-0" />
-                                <h3 className="text-lg font-bold mb-3 text-white font-sans text-center">AI・DX導入サポート</h3>
-                                <div className="w-10 h-px bg-white/30 mb-4 shrink-0"></div>
-                                <p className="text-sm text-primary-50 leading-relaxed font-sans text-center">
-                                    「ITに詳しい人材がいない」という企業様向けに、生成AIの活用支援や、業務効率化ツールの導入をサポート。生産性を劇的に向上させます。
-                                </p>
-                            </div>
+                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                            <Cpu className="w-12 h-12 text-primary-600 mb-6" />
+                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">AI・DX<br/>導入サポート</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
+                                生成AIの活用や業務効率化ツールの導入をサポートし、生産性を向上させます。
+                            </p>
+                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
+                                詳細を見る <ArrowRight className="w-4 h-4" />
+                            </Link>
                         </div>
+                    </div>
+                    
+                    <div className="mt-12 text-center">
+                        <Link href={`/${lang}/services`} className="inline-flex items-center text-primary-600 font-bold hover:text-primary-800 transition-colors gap-1">
+                            サービス一覧を見る <ArrowRight className="w-4 h-4" />
+                        </Link>
                     </div>
                 </div>
             </section>
 
             {/* Workflow Section */}
-            <section id="workflow" className="py-24 bg-zinc-50 border-t border-zinc-100">
+            <section id="workflow" className="py-24 bg-white border-t border-zinc-100">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 font-sans">ご相談から導入までの流れ</h2>
                         <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full"></div>
                     </div>
 
-                    {/* Timeline Container */}
-                    <div className="relative">
-                        {/* Horizontal Line for Desktop */}
-                        <div className="hidden md:block absolute top-[48px] left-0 w-full h-[2px] bg-primary-100"></div>
-                        
-                        <div className="flex flex-col md:flex-row gap-12 md:gap-4 justify-between relative z-10">
-                            {/* Step 1 */}
-                            <div className="flex flex-row md:flex-col items-start md:items-center gap-6 md:gap-6 md:flex-1 relative group">
-                                <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full bg-white border-4 border-primary-100 flex items-center justify-center text-primary-600 text-xl md:text-2xl font-bold shadow-sm group-hover:border-primary-500 group-hover:bg-primary-50 transition-colors z-10">
-                                    01
+                    <div className="relative max-w-5xl mx-auto">
+                        <div className="flex flex-col gap-8 relative z-10">
+                            {[
+                                { title: "無料ヒアリング・課題抽出", desc: "まずは貴社の現状や目標、抱えているお悩みをお聞かせください。" },
+                                { title: "戦略・プランのご提案", desc: "お伺いした内容をもとに、最短で成果を出すための最適なプランをご提示します。" },
+                                { title: "ご契約", desc: "提案内容にご納得いただけましたら、正式にご契約となります。" },
+                                { title: "制作・施策の実行", desc: "少数精鋭のチームが、責任を持ってスピーディにプロジェクトを進行します。" },
+                                { title: "運用サポート・改善", desc: "データに基づいた効果測定と改善を繰り返し、持続的な成長をサポートします。" }
+                            ].map((step, index) => (
+                                <div key={index} className="flex flex-row items-center gap-6 relative group bg-zinc-50 p-6 rounded-2xl border border-zinc-100 shadow-sm transition-transform hover:-translate-y-1">
+                                    <div className="w-16 h-16 shrink-0 rounded-full bg-white border-4 border-primary-100 flex items-center justify-center text-primary-600 text-xl font-bold shadow-sm z-10">
+                                        0{index + 1}
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-bold mb-2 text-zinc-900 font-sans">{step.title}</h3>
+                                        <p className="text-sm text-zinc-600 leading-relaxed font-sans">{step.desc}</p>
+                                    </div>
                                 </div>
-                                {/* Vertical line for mobile */}
-                                <div className="md:hidden absolute left-[38px] top-[80px] h-[calc(100%+24px)] w-[2px] bg-primary-100 -z-10"></div>
-                                
-                                <div className="flex-1 md:text-center mt-2 md:mt-0 pt-2 md:pt-0">
-                                    <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans">[無料ヒアリング・課題の抽出]</h3>
-                                    <p className="text-sm text-zinc-600 leading-relaxed font-sans">
-                                        まずは貴社の現状や目標、抱えているお悩みをお聞かせください。
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Step 2 */}
-                            <div className="flex flex-row md:flex-col items-start md:items-center gap-6 md:gap-6 md:flex-1 relative group pt-4 md:pt-0">
-                                <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full bg-white border-4 border-primary-100 flex items-center justify-center text-primary-600 text-xl md:text-2xl font-bold shadow-sm group-hover:border-primary-500 group-hover:bg-primary-50 transition-colors z-10">
-                                    02
-                                </div>
-                                {/* Vertical line for mobile */}
-                                <div className="md:hidden absolute left-[38px] top-[80px] h-[calc(100%+24px)] w-[2px] bg-primary-100 -z-10"></div>
-                                
-                                <div className="flex-1 md:text-center mt-2 md:mt-0 pt-2 md:pt-0">
-                                    <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans">[戦略・プランのご提案]</h3>
-                                    <p className="text-sm text-zinc-600 leading-relaxed font-sans">
-                                        AIツールやデジタル施策を組み合わせた、最短で成果を出すための最適なプランをご提示します。
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Step 3 */}
-                            <div className="flex flex-row md:flex-col items-start md:items-center gap-6 md:gap-6 md:flex-1 relative group pt-4 md:pt-0">
-                                <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full bg-white border-4 border-primary-100 flex items-center justify-center text-primary-600 text-xl md:text-2xl font-bold shadow-sm group-hover:border-primary-500 group-hover:bg-primary-50 transition-colors z-10">
-                                    03
-                                </div>
-                                {/* Vertical line for mobile */}
-                                <div className="md:hidden absolute left-[38px] top-[80px] h-[calc(100%+24px)] w-[2px] bg-primary-100 -z-10"></div>
-                                
-                                <div className="flex-1 md:text-center mt-2 md:mt-0 pt-2 md:pt-0">
-                                    <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans">[制作・施策の実行]</h3>
-                                    <p className="text-sm text-zinc-600 leading-relaxed font-sans">
-                                        少数精鋭のチームが、責任を持ってスピーディにプロジェクトを進行します。
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Step 4 */}
-                            <div className="flex flex-row md:flex-col items-start md:items-center gap-6 md:gap-6 md:flex-1 relative group pt-4 md:pt-0">
-                                <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full bg-white border-4 border-primary-100 flex items-center justify-center text-primary-600 text-xl md:text-2xl font-bold shadow-sm group-hover:border-primary-500 group-hover:bg-primary-50 transition-colors z-10">
-                                    04
-                                </div>
-                                <div className="flex-1 md:text-center mt-2 md:mt-0 pt-2 md:pt-0">
-                                    <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans">[運用サポート・改善]</h3>
-                                    <p className="text-sm text-zinc-600 leading-relaxed font-sans">
-                                        納品後も、データに基づいた効果測定と改善を繰り返し、持続的な成長をサポートします。
-                                    </p>
-                                </div>
-                            </div>
-
+                            ))}
                         </div>
+                    </div>
+
+                    <div className="mt-16 text-center">
+                        <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-md font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-1 text-lg">
+                            まずは相談する <ArrowRight className="w-5 h-5" />
+                        </Link>
                     </div>
                 </div>
             </section>
 
             {/* About Section */}
-            <section id="about" className="py-24 bg-white border-t border-zinc-100 relative">
+            <section id="about" className="py-24 bg-zinc-50 border-t border-zinc-100 relative">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-zinc-900 font-sans">会社概要</h2>
                     <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full mb-12"></div>
                     
-                    <div className="bg-zinc-50 border border-zinc-100 rounded-3xl p-10 md:p-16 shadow-sm relative overflow-hidden">
+                    <div className="bg-white border border-zinc-100 rounded-3xl p-10 md:p-16 shadow-sm relative overflow-hidden text-center">
                          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-400 to-primary-600"></div>
                          <h3 className="text-2xl md:text-3xl font-bold text-primary-900 mb-8 font-sans leading-relaxed">
-                             「テクノロジーの力で、<br className="md:hidden"/>すべての企業にフラットな競争力を。」
+                             テクノロジーの力で、<br/>地域企業をエンパワーメントする
                          </h3>
                          <p className="text-zinc-600 text-base md:text-lg leading-relaxed mb-12 font-sans font-medium">
                              私たちは、最新のデジタル技術を誰もが活用できる形に翻訳し、地域経済を支える企業様のビジネスを加速させるパートナーです。
                          </p>
 
-                         <div className="border-t border-zinc-200 pt-8 flex items-center justify-center gap-4">
-                             <span className="text-zinc-500 font-bold uppercase tracking-widest text-sm">Company Name</span>
-                             <span className="text-zinc-900 font-extrabold text-2xl tracking-tight">Fabcom</span>
-                         </div>
+                         <Link href={`/${lang}/about`} className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 rounded-full font-bold transition-all shadow-sm">
+                             会社情報を見る <ArrowRight className="w-4 h-4" />
+                         </Link>
                     </div>
                 </div>
             </section>
@@ -300,13 +270,17 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                     </h2>
                     <p className="text-primary-100 text-lg md:text-xl mb-12 leading-relaxed font-sans max-w-2xl mx-auto">
                         「何から始めればいいかわからない」といったご相談でも構いません。<br className="hidden md:block"/>
-                        御社のビジネスの成長を後押しする最適なプランを共に考えさせてください。
+                        まずは無料オンライン相談にて、お気軽にお話ししましょう。
                     </p>
                     
-                    <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-primary-900 hover:bg-zinc-50 rounded-full font-bold text-lg md:text-xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 group border-2 border-transparent hover:border-primary-100">
-                        無料オンライン相談を予約する
-                        <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                        <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-primary-900 hover:bg-zinc-50 rounded-full font-bold text-lg transition-all shadow-lg border-2 border-transparent">
+                            無料相談する <ArrowRight className="w-5 h-5" />
+                        </Link>
+                        <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-white border-2 border-white hover:bg-white/10 rounded-full font-bold text-lg transition-all shadow-lg">
+                            サービス一覧を見る <ArrowRight className="w-5 h-5" />
+                        </Link>
+                    </div>
                 </div>
             </section>
         </>

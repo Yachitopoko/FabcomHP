@@ -73,18 +73,6 @@ export default function Header({ lang }: { lang: Locale }) {
                             >
                                 About
                             </Link>
-                            <Link
-                                href={`/${lang}/features`}
-                                className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
-                            >
-                                Features
-                            </Link>
-                            <Link
-                                href={`/${lang}/workflow`}
-                                className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
-                            >
-                                Workflow
-                            </Link>
                         </div>
 
                         {/* Divider */}
