@@ -1,4 +1,4 @@
-import { ArrowRight, Bot, Cpu, MonitorSmartphone, TrendingUp, Users, Zap } from "lucide-react";
+import { ArrowRight, Bot, Cpu, MonitorSmartphone, Repeat, TrendingUp, Users, Zap } from "lucide-react";
 import Link from "next/link";
 import { Locale } from "@/i18n-config";
 
@@ -132,74 +132,74 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 </div>
             </section>
 
-            {/* Features (Why Choose Us) Section */}
+            {/* Features (Why Choose Us) Section - Sticky Scroll Layout */}
             <section id="features" className="py-24 bg-white border-t border-zinc-100">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 font-sans">なぜ、Fabcomが選ばれるのか</h2>
-                        <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full"></div>
-                    </div>
-
-                    {/* Infographic Layout */}
-                    <div className="flex flex-col lg:flex-row items-center justify-center gap-12 relative">
-                        
-                        {/* Center Graphic for Desktop (visible on Lg layout, or stacked on mobile) */}
-                        <div className="lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 w-48 h-48 md:w-56 md:h-56 rounded-full bg-white shadow-xl border-4 border-primary-50 flex flex-col items-center justify-center z-10 shrink-0 relative">
-                            <div className="absolute -inset-4 border-2 border-primary-100 rounded-full border-dashed animate-[spin_20s_linear_infinite]"></div>
-                            <div className="text-primary-600 mb-2">
-                                <Bot className="w-12 h-12 md:w-16 md:h-16" />
-                            </div>
-                            <div className="text-center font-bold text-zinc-900 text-lg md:text-xl">
-                                AI <span className="text-primary-400">×</span> 伴走
-                            </div>
-                            <div className="text-xs text-zinc-500 mt-1 font-medium">Fabcomの強み</div>
-                        </div>
-
-                        {/* Connecting Lines for Desktop (hidden on mobile) */}
-                        <div className="hidden lg:block absolute top-[40%] left-[20%] right-[20%] h-px bg-primary-200 -z-0"></div>
-                        <div className="hidden lg:block absolute top-[40%] left-1/2 -translate-x-1/2 h-[300px] w-px bg-primary-200 -z-0"></div>
-
-                        {/* Cards */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-24 w-full z-10 relative mt-8 lg:mt-0">
-                            {/* Strength 1 */}
-                            <div className="bg-zinc-50 p-8 rounded-xl shadow-sm border border-zinc-100 relative group lg:-translate-y-16">
-                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
-                                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
-                                    <Zap className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">AI活用による<br/>スピードとコスト削減</h3>
-                                <p className="text-zinc-600 text-sm leading-relaxed font-sans">
-                                    最新AI技術を制作プロセスに組み込み、限られたご予算でも高品質かつスピーディな提供を実現します。
-                                </p>
-                            </div>
-
-                            {/* Strength 2 */}
-                            <div className="bg-zinc-50 p-8 rounded-xl shadow-sm border border-zinc-100 relative group lg:translate-y-48">
-                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
-                                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
-                                    <Users className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">少数精鋭の<br/>「完全伴走型」サポート</h3>
-                                <p className="text-zinc-600 text-sm leading-relaxed font-sans">
-                                    専門家が直接ヒアリングから実行までを一貫して担当し、認識のズレを防ぎ想いを形にします。
-                                </p>
-                            </div>
-
-                            {/* Strength 3 */}
-                            <div className="bg-zinc-50 p-8 rounded-xl shadow-sm border border-zinc-100 relative group lg:-translate-y-16">
-                                <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
-                                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
-                                    <TrendingUp className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-lg font-bold mb-3 text-zinc-900 font-sans leading-tight">集客と効率化の<br/>ワンストップ支援</h3>
-                                <p className="text-zinc-600 text-sm leading-relaxed font-sans">
-                                    作るだけで終わらず、Web集客からIT化・DX推進による業務効率化まで包括的に支援します。
-                                </p>
+                    <div className="flex flex-col md:flex-row items-start gap-12 md:gap-16">
+                        {/* Left Column: Sticky Title Area */}
+                        <div className="w-full md:w-1/3 md:sticky md:top-32">
+                            <div className="border-b-4 border-primary-600 w-12 mb-6"></div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 font-sans leading-tight mb-6">
+                                なぜ、Fabcomが<br/>選ばれるのか
+                            </h2>
+                            <p className="text-zinc-500 text-base leading-relaxed font-sans">
+                                AI × 伴走で、ビジネスの成長を最短距離で支援します。
+                            </p>
+                            <div className="mt-10 hidden md:block">
+                                <Link href={`/${lang}/about`} className="inline-flex items-center text-primary-600 font-bold hover:text-primary-800 transition-colors gap-1">
+                                    Fabcomについて見る <ArrowRight className="w-4 h-4" />
+                                </Link>
                             </div>
                         </div>
+
+                        {/* Right Column: Scrollable Cards */}
+                        <div className="w-full md:w-2/3 flex flex-col gap-10">
+                            {/* Card 1 */}
+                            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-md border border-zinc-100 relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+                                <div className="absolute top-6 right-6 text-5xl font-bold text-primary-100 select-none leading-none">01</div>
+                                <div className="relative z-10">
+                                    <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-5 group-hover:scale-110 transition-transform duration-300">
+                                        <Zap className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-3 text-zinc-900 font-sans">AI活用で、高品質を身近に</h3>
+                                    <p className="text-zinc-600 text-sm leading-relaxed font-sans">
+                                        最新のAI技術をプロセスに組み込むことで大幅に効率化。限られた予算でも、妥協のない高品質な成果をスピーディに提供します。
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Card 2 */}
+                            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-md border border-zinc-100 relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+                                <div className="absolute top-6 right-6 text-5xl font-bold text-primary-100 select-none leading-none">02</div>
+                                <div className="relative z-10">
+                                    <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-5 group-hover:scale-110 transition-transform duration-300">
+                                        <Users className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-3 text-zinc-900 font-sans">専門家による、完全伴走型サポート</h3>
+                                    <p className="text-zinc-600 text-sm leading-relaxed font-sans">
+                                        作って終わりではありません。経験豊富な専門家がヒアリングから実行、改善までを一貫して担当し、貴社の成功を直接サポートします。
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Card 3 */}
+                            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-md border border-zinc-100 relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+                                <div className="absolute top-6 right-6 text-5xl font-bold text-primary-100 select-none leading-none">03</div>
+                                <div className="relative z-10">
+                                    <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-5 group-hover:scale-110 transition-transform duration-300">
+                                        <Repeat className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-3 text-zinc-900 font-sans">集客から業務効率化までワンストップ</h3>
+                                    <p className="text-zinc-600 text-sm leading-relaxed font-sans">
+                                        Web制作からマーケティング、DX推進まで。複数の業者に依頼する手間を省き、ビジネスの成長を包括的に支援します。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div className="mt-20 text-center">
+
+                    {/* Mobile only: Fabcomについて見る link */}
+                    <div className="mt-12 text-center md:hidden">
                         <Link href={`/${lang}/about`} className="inline-flex items-center text-primary-600 font-bold hover:text-primary-800 transition-colors gap-1">
                             Fabcomについて見る <ArrowRight className="w-4 h-4" />
                         </Link>
@@ -207,16 +207,19 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 </div>
             </section>
 
-            {/* Workflow Section */}
-            <section id="workflow" className="py-24 bg-white border-t border-zinc-100">
+            {/* Workflow Section - Vertical Timeline */}
+            <section id="workflow" className="py-24 bg-slate-50 border-t border-zinc-100">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 font-sans">ご相談から導入までの流れ</h2>
                         <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full"></div>
                     </div>
 
-                    <div className="relative max-w-5xl mx-auto">
-                        <div className="flex flex-col gap-8 relative z-10">
+                    <div className="relative max-w-3xl mx-auto">
+                        {/* Vertical Timeline Line */}
+                        <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-zinc-200"></div>
+
+                        <div className="flex flex-col gap-12 relative z-10">
                             {[
                                 { title: "無料ヒアリング・課題抽出", desc: "まずは貴社の現状や目標、抱えているお悩みをお聞かせください。" },
                                 { title: "戦略・プランのご提案", desc: "お伺いした内容をもとに、最短で成果を出すための最適なプランをご提示します。" },
@@ -224,13 +227,15 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                                 { title: "制作・施策の実行", desc: "少数精鋭のチームが、責任を持ってスピーディにプロジェクトを進行します。" },
                                 { title: "運用サポート・改善", desc: "データに基づいた効果測定と改善を繰り返し、持続的な成長をサポートします。" }
                             ].map((step, index) => (
-                                <div key={index} className="flex flex-row items-center gap-6 relative group bg-zinc-50 p-6 rounded-2xl border border-zinc-100 shadow-sm transition-transform hover:-translate-y-1">
-                                    <div className="w-16 h-16 shrink-0 rounded-full bg-white border-4 border-primary-100 flex items-center justify-center text-primary-600 text-xl font-bold shadow-sm z-10">
+                                <div key={index} className="flex items-start gap-6 md:gap-8 group">
+                                    {/* Node */}
+                                    <div className="w-12 h-12 md:w-16 md:h-16 shrink-0 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold text-sm md:text-lg shadow-lg z-10 ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
                                         0{index + 1}
                                     </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-lg font-bold mb-2 text-zinc-900 font-sans">{step.title}</h3>
-                                        <p className="text-sm text-zinc-600 leading-relaxed font-sans">{step.desc}</p>
+                                    {/* Content */}
+                                    <div className="flex-1 pt-1 md:pt-2 pb-2">
+                                        <h3 className="text-lg md:text-xl font-bold mb-2 text-zinc-900 font-sans">{step.title}</h3>
+                                        <p className="text-sm md:text-base text-zinc-600 leading-relaxed font-sans">{step.desc}</p>
                                     </div>
                                 </div>
                             ))}
