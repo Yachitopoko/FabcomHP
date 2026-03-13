@@ -9,7 +9,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     return (
         <>
             {/* Hero Section */}
-            <section id="hero" className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden bg-primary-900">
+            <section id="hero" className="relative pt-40 pb-24 md:pt-56 md:pb-40 overflow-hidden bg-primary-900">
                 {/* リッチな濃い青の背景グラデーション（Salesforce風の深み） */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 pointer-events-none"></div>
 

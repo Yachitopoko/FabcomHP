@@ -49,9 +49,9 @@ export default function Header({ lang }: { lang: Locale }) {
 
     return (
         <header
-            className={`fixed z-[100] left-0 right-0 transition-all duration-300 ease-in-out ${scrolled
-                ? "top-0 px-0"
-                : "top-4 md:top-6 px-4"
+            className={`fixed w-full top-0 z-50 bg-transparent transition-all duration-300 ease-in-out ${scrolled
+                ? "pt-0 px-0"
+                : "pt-4 md:pt-6 px-4"
                 }`}
         >
             <nav
