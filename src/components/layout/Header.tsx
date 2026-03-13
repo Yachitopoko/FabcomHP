@@ -10,6 +10,27 @@ export default function Header({ lang }: { lang: Locale }) {
     const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
 
+    const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+        // Only prevent default and scroll if we are on the same page (pathname starts with `/${lang}`)
+        // We do a simple check. For a more robust Next.js single-page anchor approach, 
+        // we scroll manually if the element exists.
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            e.preventDefault();
+            // 80px offset to account for the fixed header
+            const offset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - offset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+            // Optionally update URL hash without jump
+            window.history.pushState(null, "", `#${targetId}`);
+        }
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 40);
@@ -66,6 +87,20 @@ export default function Header({ lang }: { lang: Locale }) {
                                 className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
                             >
                                 Services
+                            </Link>
+                            <Link
+                                href={`/${lang}#features`}
+                                onClick={(e) => handleSmoothScroll(e, "features")}
+                                className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
+                            >
+                                Features
+                            </Link>
+                            <Link
+                                href={`/${lang}#workflow`}
+                                onClick={(e) => handleSmoothScroll(e, "workflow")}
+                                className="px-3.5 py-2 rounded-lg hover:text-zinc-900 hover:bg-zinc-50 transition-all"
+                            >
+                                Workflow
                             </Link>
                             <Link
                                 href={`/${lang}/about`}
