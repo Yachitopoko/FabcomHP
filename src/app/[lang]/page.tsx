@@ -9,43 +9,30 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     return (
         <>
             {/* Hero Section */}
-            <section id="hero" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white">
-                {/* Abstract Background Animation */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-primary-50/50 blur-3xl animate-[float_8s_ease-in-out_infinite]" />
-                    <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-blue-50/30 blur-3xl animate-[float_10s_ease-in-out_infinite_reverse]" />
-                    
-                    {/* SVG Geometric shapes */}
-                    <svg className="absolute top-[20%] right-[10%] w-64 h-64 text-primary-100/50 animate-[spin_30s_linear_infinite]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="currentColor" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.6,-46.3C91.4,-33.5,98,-18.1,97.7,-2.8C97.4,12.5,90.2,27.7,80,40.1C69.8,52.5,56.6,62.1,42.4,68.9C28.2,75.7,13,79.7,-2.1,83C-17.2,86.3,-32.1,88.9,-44.8,82.4C-57.5,75.9,-68.1,60.3,-75.4,44.1C-82.7,27.9,-86.8,11.1,-86.3,-5.4C-85.8,-21.9,-80.7,-38.1,-71.3,-51.2C-61.9,-64.3,-48.2,-74.3,-33.6,-80.8C-19,-87.3,-3.5,-90.3,11.1,-87.3C25.7,-84.3,30.6,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
-                    </svg>
-                    <svg className="absolute bottom-[20%] right-[30%] w-48 h-48 text-primary-200/40 animate-[spin_40s_linear_infinite_reverse]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="currentColor" d="M39.9,-65.7C54.1,-58.5,69.5,-52.1,79.5,-40.5C89.5,-28.9,94.1,-12.1,91.7,3.9C89.3,19.9,79.9,35.1,68.1,47.2C56.3,59.3,42.1,68.3,26.9,73.5C11.7,78.7,-4.5,80.1,-20.1,76.5C-35.7,72.9,-50.7,64.3,-62.7,52.3C-74.7,40.3,-83.7,24.9,-85.5,9.1C-87.3,-6.7,-81.9,-22.9,-72.5,-35.5C-63.1,-48.1,-49.7,-57.1,-35.6,-64.4C-21.5,-71.7,-6.7,-77.3,7,-81.2C20.7,-85.1,33.5,-87.3,39.9,-65.7Z" transform="translate(100 100)" />
-                    </svg>
-                </div>
-
-                <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-start lg:items-center text-left lg:text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-200 bg-primary-50 text-primary-700 text-sm font-bold mb-8 shadow-sm">
+            <section id="hero" className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden bg-gradient-to-br from-white via-primary-50/40 to-white">
+                <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-100/50 bg-white/80 backdrop-blur-sm text-primary-700 text-sm font-bold mb-8 shadow-sm">
                         <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
-                        地域企業のためのAI実装パートナー
+                        地域企業のためのAI・デジタル支援パートナー
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight text-zinc-900 font-sans">
-                        AIとデジタルの力で、<br className="hidden md:block" />
-                        地域のビジネスに「<span className="text-primary-600">次の一手</span>」を。
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-zinc-900 font-sans leading-[1.2]">
+                        地域企業の成長を<br/>
+                        <span className="text-primary-600">Webと集客とAI活用で支える</span>
                     </h1>
 
-                    <p className="text-base md:text-lg text-zinc-600 mb-10 max-w-3xl leading-relaxed font-sans font-medium">
-                        最新のAIテクノロジーとデジタルマーケティングで、企業が抱える「集客」と「業務効率化」の課題を解決します。技術をただ導入するだけでなく、ビジネスの成長に伴走するパートナーとして、最適な次の一手をご提案します。
+                    <p className="text-base md:text-xl text-zinc-600 mb-12 max-w-3xl leading-relaxed font-sans font-medium">
+                        Webサイト制作、デジタルマーケティング、AI導入支援まで。<br className="hidden md:block"/>
+                        事業課題に合わせて、成果につながる施策を一緒に設計・実行します。
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
-                        <Link href={`/${lang}/contact`} className="flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-md font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto text-lg">
+                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+                        <Link href={`/${lang}/contact`} className="flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-md font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full sm:w-auto text-lg">
                             無料相談する <ArrowRight className="w-5 h-5" />
                         </Link>
-                        <a href="#services" className="flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-primary-600 hover:bg-primary-50 text-primary-600 rounded-md font-bold transition-all shadow-sm w-full sm:w-auto text-lg">
+                        <Link href={`/${lang}/services`} className="flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-zinc-200 hover:border-primary-600 hover:bg-zinc-50 text-zinc-700 hover:text-primary-600 rounded-md font-bold transition-all shadow-sm w-full sm:w-auto text-lg">
                             サービスを見る
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
