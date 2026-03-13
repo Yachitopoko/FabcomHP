@@ -41,18 +41,38 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </section>
 
             {/* Challenges Section */}
-            <section className="py-20 bg-zinc-50 border-t border-zinc-100">
-                <div className="max-w-5xl mx-auto px-6 text-center">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-10 text-zinc-900 font-sans">こんなお悩みはありませんか？</h2>
-                    <div className="flex flex-col md:flex-row gap-6 justify-center">
-                        <div className="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm flex-1 flex items-center justify-center min-h-[100px]">
-                            <p className="text-zinc-700 font-bold leading-relaxed">「Webサイトが古く、<br/>会社の魅力が伝わらない…」</p>
+            <section className="py-24 bg-slate-50">
+                <div className="max-w-5xl mx-auto px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-zinc-900 font-sans tracking-tight">こんなお悩みはありませんか？</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                        {/* Card 1 */}
+                        <div className="bg-white p-8 rounded-2xl border border-zinc-100 shadow-md flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300">
+                            <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center mb-6 text-primary-600 group-hover:scale-110 transition-transform duration-300">
+                                <MonitorSmartphone className="w-7 h-7" />
+                            </div>
+                            <p className="text-gray-800 font-semibold text-lg leading-relaxed">
+                                「Webサイトが古く、<br/>会社の魅力が伝わらない…」
+                            </p>
                         </div>
-                        <div className="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm flex-1 flex items-center justify-center min-h-[100px]">
-                            <p className="text-zinc-700 font-bold leading-relaxed">「集客や採用に<br/>デジタルを活用しきれていない…」</p>
+                        
+                        {/* Card 2 */}
+                        <div className="bg-white p-8 rounded-2xl border border-zinc-100 shadow-md flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300">
+                            <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center mb-6 text-primary-600 group-hover:scale-110 transition-transform duration-300">
+                                <Users className="w-7 h-7" />
+                            </div>
+                            <p className="text-gray-800 font-semibold text-lg leading-relaxed">
+                                「集客や採用に<br/>デジタルを活用しきれていない…」
+                            </p>
                         </div>
-                        <div className="bg-white p-6 rounded-xl border border-zinc-200 shadow-sm flex-1 flex items-center justify-center min-h-[100px]">
-                            <p className="text-zinc-700 font-bold leading-relaxed">「AIやITツールを導入したいが、<br/>詳しい人材がいない…」</p>
+                        
+                        {/* Card 3 */}
+                        <div className="bg-white p-8 rounded-2xl border border-zinc-100 shadow-md flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300">
+                            <div className="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center mb-6 text-primary-600 group-hover:scale-110 transition-transform duration-300">
+                                <Bot className="w-7 h-7" />
+                            </div>
+                            <p className="text-gray-800 font-semibold text-lg leading-relaxed">
+                                「AIやITツールを導入したいが、<br/>詳しい人材がいない…」
+                            </p>
                         </div>
                     </div>
                 </div>
