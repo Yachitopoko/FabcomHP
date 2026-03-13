@@ -78,7 +78,60 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 </div>
             </section>
 
-            {/* Features Section */}
+            {/* Services Section */}
+            <section id="services" className="py-24 bg-zinc-50 border-t border-zinc-100">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center max-w-2xl mx-auto mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 font-sans">提供サービス</h2>
+                        <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full"></div>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {/* Service 1 */}
+                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                            <MonitorSmartphone className="w-12 h-12 text-primary-600 mb-6" />
+                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">Webサイト制作・<br/>リニューアル</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
+                                企業の「顔」となり、信用を向上させる高品質なWebサイトを構築します。
+                            </p>
+                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
+                                詳細を見る <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </div>
+
+                        {/* Service 2 */}
+                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                            <TrendingUp className="w-12 h-12 text-primary-600 mb-6" />
+                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">デジタル集客・<br/>マーケティング支援</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
+                                SNS運用や広告など、貴社に最適なマーケティング戦略を立案・実行します。
+                            </p>
+                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
+                                詳細を見る <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </div>
+
+                        {/* Service 3 */}
+                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
+                            <Cpu className="w-12 h-12 text-primary-600 mb-6" />
+                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">AI・DX<br/>導入サポート</h3>
+                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
+                                生成AIの活用や業務効率化ツールの導入をサポートし、生産性を向上させます。
+                            </p>
+                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
+                                詳細を見る <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </div>
+                    </div>
+                    
+                    <div className="mt-12 text-center">
+                        <Link href={`/${lang}/services`} className="inline-flex items-center text-primary-600 font-bold hover:text-primary-800 transition-colors gap-1">
+                            サービス一覧を見る <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* Features (Why Choose Us) Section */}
             <section id="features" className="py-24 bg-white border-t border-zinc-100">
                 <div className="max-w-7xl mx-auto px-6">
@@ -149,60 +202,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                     <div className="mt-20 text-center">
                         <Link href={`/${lang}/about`} className="inline-flex items-center text-primary-600 font-bold hover:text-primary-800 transition-colors gap-1">
                             Fabcomについて見る <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Services Section */}
-            <section id="services" className="py-24 bg-zinc-50 border-t border-zinc-100">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center max-w-2xl mx-auto mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 font-sans">提供サービス</h2>
-                        <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full"></div>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {/* Service 1 */}
-                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-                            <MonitorSmartphone className="w-12 h-12 text-primary-600 mb-6" />
-                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">Webサイト制作・<br/>リニューアル</h3>
-                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
-                                企業の「顔」となり、信用を向上させる高品質なWebサイトを構築します。
-                            </p>
-                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
-                                詳細を見る <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </div>
-
-                        {/* Service 2 */}
-                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-                            <TrendingUp className="w-12 h-12 text-primary-600 mb-6" />
-                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">デジタル集客・<br/>マーケティング支援</h3>
-                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
-                                SNS運用や広告など、貴社に最適なマーケティング戦略を立案・実行します。
-                            </p>
-                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
-                                詳細を見る <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </div>
-
-                        {/* Service 3 */}
-                        <div className="bg-white border border-zinc-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-                            <Cpu className="w-12 h-12 text-primary-600 mb-6" />
-                            <h3 className="text-xl font-bold text-zinc-900 font-sans mb-4">AI・DX<br/>導入サポート</h3>
-                            <p className="text-sm text-zinc-600 leading-relaxed font-sans mb-8 flex-grow">
-                                生成AIの活用や業務効率化ツールの導入をサポートし、生産性を向上させます。
-                            </p>
-                            <Link href={`/${lang}/services`} className="inline-flex items-center justify-center gap-2 w-full py-3 bg-white border border-primary-200 text-primary-600 rounded-md font-bold hover:bg-primary-50 transition-colors">
-                                詳細を見る <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </div>
-                    </div>
-                    
-                    <div className="mt-12 text-center">
-                        <Link href={`/${lang}/services`} className="inline-flex items-center text-primary-600 font-bold hover:text-primary-800 transition-colors gap-1">
-                            サービス一覧を見る <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
                 </div>
