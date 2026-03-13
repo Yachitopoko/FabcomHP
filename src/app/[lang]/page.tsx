@@ -250,24 +250,54 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 </div>
             </section>
 
-            {/* About Section */}
+            {/* About Us Section */}
             <section id="about" className="py-24 bg-zinc-50 border-t border-zinc-100 relative">
-                <div className="max-w-4xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-zinc-900 font-sans">会社概要</h2>
-                    <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full mb-12"></div>
-                    
-                    <div className="bg-white border border-zinc-100 rounded-3xl p-10 md:p-16 shadow-sm relative overflow-hidden text-center">
-                         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-400 to-primary-600"></div>
-                         <h3 className="text-2xl md:text-3xl font-bold text-primary-900 mb-8 font-sans leading-relaxed">
-                             テクノロジーの力で、<br/>地域企業をエンパワーメントする
-                         </h3>
-                         <p className="text-zinc-600 text-base md:text-lg leading-relaxed mb-12 font-sans font-medium">
-                             私たちは、最新のデジタル技術を誰もが活用できる形に翻訳し、地域経済を支える企業様のビジネスを加速させるパートナーです。
-                         </p>
+                <div className="max-w-5xl mx-auto px-6">
+                    {/* Section Title */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900 font-sans">About Us</h2>
+                        <div className="w-20 h-1 bg-primary-600 mx-auto rounded-full mb-10"></div>
 
-                         <Link href={`/${lang}/about`} className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 rounded-full font-bold transition-all shadow-sm">
-                             会社情報を見る <ArrowRight className="w-4 h-4" />
-                         </Link>
+                        <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 font-sans leading-relaxed mb-6">
+                            テクノロジーの力で、<br/>地域企業をエンパワーメントする
+                        </h3>
+                        <p className="text-zinc-600 text-base md:text-lg leading-relaxed font-sans max-w-3xl mx-auto">
+                            私たちは、最新のデジタル技術を誰もが活用できる形に翻訳し、地域経済を支える企業様のビジネスを加速させるパートナーです。
+                        </p>
+                    </div>
+
+                    {/* Member Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 md:mt-16">
+                        {/* Member 1 */}
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100 text-center">
+                            <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-6 overflow-hidden">
+                                <div className="w-full h-full flex items-center justify-center text-gray-400 text-4xl font-light">👤</div>
+                            </div>
+                            <h4 className="text-xl font-bold text-zinc-900 font-sans">ぽこ</h4>
+                            <p className="text-primary-600 text-sm font-medium mt-1 mb-5">Co-Founder / AI・デジタルストラテジスト</p>
+                            <p className="text-gray-600 text-sm leading-relaxed font-sans text-left">
+                                デジタルマーケティングとAI活用の領域で培った経験を活かし、地域企業のビジネス課題に最適なデジタル戦略を設計。テクノロジーを「分かりやすく」届けることをモットーに、クライアントの成長を伴走型で支援しています。
+                            </p>
+                        </div>
+
+                        {/* Member 2 */}
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100 text-center">
+                            <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-6 overflow-hidden">
+                                <div className="w-full h-full flex items-center justify-center text-gray-400 text-4xl font-light">👤</div>
+                            </div>
+                            <h4 className="text-xl font-bold text-zinc-900 font-sans">Member Name</h4>
+                            <p className="text-primary-600 text-sm font-medium mt-1 mb-5">Co-Founder / テクニカルディレクター</p>
+                            <p className="text-gray-600 text-sm leading-relaxed font-sans text-left">
+                                Webアプリケーション開発とインフラ設計を専門とし、堅牢でスケーラブルなシステム構築を担当。最新技術のキャッチアップと実務への落とし込みを得意とし、クライアントのDX推進をテクニカル面から支えています。
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Link to About page */}
+                    <div className="mt-12 text-center">
+                        <Link href={`/${lang}/about`} className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 rounded-full font-bold transition-all shadow-sm">
+                            会社情報を見る <ArrowRight className="w-4 h-4" />
+                        </Link>
                     </div>
                 </div>
             </section>
