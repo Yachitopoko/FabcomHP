@@ -16,7 +16,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
             services: ["Webサイト制作・リニューアル", "LP制作"],
             icon: <Layout className="w-8 h-8" />,
             image: "/images/services/creative.png",
-            reverse: false
+            reverse: false,
+            href: `/${lang}/services/creative`
         },
         {
             id: "digital-marketing",
@@ -25,7 +26,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
             services: ["広告運用", "SNS・集客支援", "リテンション施策"],
             icon: <Megaphone className="w-8 h-8" />,
             image: "/images/services/marketing.png",
-            reverse: true
+            reverse: true,
+            href: `/${lang}/services/marketing`
         },
         {
             id: "ai-dx",
@@ -34,7 +36,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
             services: ["AI活用支援", "業務効率化・導入支援"],
             icon: <Cpu className="w-8 h-8" />,
             image: "/images/services/ai_dx.png",
-            reverse: false
+            reverse: false,
+            href: `/${lang}/services/ai-dx`
         }
     ];
 
@@ -83,47 +86,49 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
 
                         {/* Interactive Image Panel */}
                         <div className="w-full md:w-1/2">
-                            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl group cursor-pointer shadow-2xl border border-zinc-100 bg-zinc-100">
-                                {/* Default State Content */}
-                                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center transition-opacity duration-500 group-hover:opacity-0">
-                                    <div className="w-20 h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-600 mb-6 border border-zinc-100">
-                                        {category.icon}
+                            <Link href={category.href}>
+                                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl group cursor-pointer shadow-2xl border border-zinc-100 bg-zinc-100">
+                                    {/* Default State Content */}
+                                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center transition-opacity duration-500 group-hover:opacity-0">
+                                        <div className="w-20 h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-600 mb-6 border border-zinc-100">
+                                            {category.icon}
+                                        </div>
+                                        <span className="flex items-center gap-2 text-primary-600 font-bold">
+                                            View Details <ArrowRight className="w-4 h-4 animate-bounce-x" />
+                                        </span>
                                     </div>
-                                    <span className="flex items-center gap-2 text-primary-600 font-bold">
-                                        View Details <ArrowRight className="w-4 h-4 animate-bounce-x" />
-                                    </span>
-                                </div>
 
-                                {/* Background Image with Zoom and Fade Effect */}
-                                <div className="absolute inset-0 transition-all duration-700 ease-out scale-110 opacity-0 group-hover:opacity-100 group-hover:scale-100">
-                                    <Image 
-                                        src={category.image} 
-                                        alt={category.title}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    {/* Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/40 to-transparent"></div>
-                                </div>
+                                    {/* Background Image with Zoom and Fade Effect */}
+                                    <div className="absolute inset-0 transition-all duration-700 ease-out scale-110 opacity-0 group-hover:opacity-100 group-hover:scale-100">
+                                        <Image 
+                                            src={category.image} 
+                                            alt={category.title}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                        {/* Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/40 to-transparent"></div>
+                                    </div>
 
-                                {/* Hover Content: Service List */}
-                                <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 z-20 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                                    <h4 className="text-white text-2xl font-bold mb-6 font-sans">提供サービス：</h4>
-                                    <div className="grid gap-3">
-                                        {category.services.map((service, sIndex) => (
-                                            <div key={sIndex} className="flex items-center gap-3 text-white">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-primary-400"></div>
-                                                <span className="font-medium text-lg">{service}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="mt-8">
-                                        <button className="px-6 py-2 bg-white text-primary-600 rounded-full font-bold text-sm hover:bg-primary-50 transition-colors">
-                                            詳しく見る
-                                        </button>
+                                    {/* Hover Content: Service List */}
+                                    <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 z-20 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                                        <h4 className="text-white text-2xl font-bold mb-6 font-sans">提供サービス：</h4>
+                                        <div className="grid gap-3">
+                                            {category.services.map((service, sIndex) => (
+                                                <div key={sIndex} className="flex items-center gap-3 text-white">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-primary-400"></div>
+                                                    <span className="font-medium text-lg">{service}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="mt-8">
+                                            <span className="inline-block px-6 py-2 bg-white text-primary-600 rounded-full font-bold text-sm hover:bg-primary-50 transition-colors">
+                                                詳しく見る
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 ))}
